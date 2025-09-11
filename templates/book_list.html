@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block content %}
+<section>
+  <h2>Books</h2>
+  {% for book in books %}
+
+  <ul>
+    <li>
+      <p>
+        <strong>{{ book.title }}</strong>
+        ( {% if book.published_year %} {{ book.published_year }} {% else %}
+        <em>Unknown Year</em>
+        {% endif %} )
+      </p>
+
+      <p>
+        ISBN: {% if book.isbn %} {{ book.isbn }} {% else %}
+        <em>N/A</em>
+        {% endif %}
+      </p>
+
+      <p>
+        Pages: {% if book.pages %} {{ book.pages }} {% else %}
+        <em>N/A</em>
+        {% endif %}
+      </p>
+
+      <p>
+        Language: {% if book.language %} {{ book.language }} {% else %}
+        <em>N/A</em>
+        {% endif %}
+      </p>
+
+      <p>
+        Authors: {% if book.authors %} {{ book.authors | map(attribute='name') |
+        join(', ') }} {% else %}
+        <em>No authors</em>
+        {% endif %}
+      </p>
+
+      <a href="{{ url_for('edit_book', book_id=book.id) }}">&#9998; Edit</a>
+    </li>
+  </ul>
+  {% endfor %}
+</section>
+{% endblock %}

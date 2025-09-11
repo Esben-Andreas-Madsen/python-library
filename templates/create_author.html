@@ -1,0 +1,14 @@
+{% extends "layout.html" %} {% block content %}
+<section>
+  <h2>Create Author</h2>
+  <form method="POST" action="{{ url_for('create_author') }}">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" required />
+
+    <label for="birth_year">Birth Year</label>
+    <input type="number" id="birth_year" name="birth_year" required />
+
+    <button type="submit" class="btn btn-primary">Create Author</button>
+  </form>
+</section>
+{% endblock %}

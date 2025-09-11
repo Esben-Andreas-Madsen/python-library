@@ -1,0 +1,150 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #121212;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin: 2rem 0 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+nav a {
+  color: #4fc3f7;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #81c784;
+}
+
+section {
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  background: #1e1e1e;
+  padding: 1rem 0 1rem 0;
+  border-radius: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+li:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+form {
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ddd;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #121212;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #4fc3f7;
+  outline: none;
+}
+
+button,
+input[type="submit"] {
+  background: #4fc3f7;
+  color: #121212;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #0099e0;
+}
+
+.btn-delete {
+  background: #f44336;
+  color: white;
+}
+
+button.btn-delete:hover {
+  background: #d32f2f;
+}
+
+li a {
+  text-decoration: none;
+  transition: 0.2s;
+  color: #616161;
+}
+
+li a:hover {
+  color: #afafaf;
+}

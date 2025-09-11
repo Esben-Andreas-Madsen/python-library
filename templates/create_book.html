@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block content %}
+<section>
+  <h2>Register Book</h2>
+  <form method="POST" action="{{ url_for('create_book') }}">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required />
+
+    <label for="published_year">Published Year</label>
+    <input type="number" id="published_year" name="published_year" />
+
+    <label for="isbn">ISBN</label>
+    <input type="text" id="isbn" name="isbn" />
+
+    <label for="pages">Pages</label>
+    <input type="number" id="pages" name="pages" />
+
+    <label for="language">Language</label>
+    <input type="text" id="language" name="language" />
+
+    <input type="submit" value="Create Book" />
+  </form>
+</section>
+{% endblock %}
