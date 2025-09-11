@@ -1,0 +1,23 @@
+{% extends 'layout.html' %} {% block content %}
+<section>
+  <h2>Author Details</h2>
+  <ul>
+    <li>
+      <p><strong>{{ author.name }}</strong></p>
+      <p>
+        Books: {% if author.books %} {{ author.books | map(attribute='title') |
+        join(', ') }} {% else %}
+        <em>No books</em>
+        {% endif %}
+      </p>
+      <p>Birth Year: {{ author.birth_year or "N/A" }}</p>
+      <p>
+        <a href="{{ url_for('edit_author', author_id=author.id) }}"
+          >&#9998; Edit</a
+        >
+      </p>
+      <a href="{{ url_for('author_list') }}">&#8592; Back to Authors</a>
+    </li>
+  </ul>
+</section>
+{% endblock %}

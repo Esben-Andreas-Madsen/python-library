@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block content %}
+<section>
+  <h2>Edit Book</h2>
+  <form method="POST">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      value="{{ book.title }}"
+      required
+    />
+
+    <label for="published_year">Published Year:</label>
+    <input
+      type="number"
+      id="published_year"
+      name="published_year"
+      value="{{ book.published_year }}"
+    />
+
+    <label for="isbn">ISBN</label>
+    <input type="text" id="isbn" name="isbn" value="{{ book.isbn }}" />
+
+    <label for="pages">Pages</label>
+    <input type="number" id="pages" name="pages" value="{{ book.pages }}" />
+
+    <label for="language">Language</label>
+    <input
+      type="text"
+      id="language"
+      name="language"
+      value="{{ book.language }}"
+    />
+
+    <input type="submit" value="Save Changes" />
+  </form>
+
+  <form method="POST" action="{{ url_for('delete_book', book_id=book.id) }}">
+    <button type="submit" class="btn-delete">&#9003; Delete</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Python Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a> |
+      <a href="{{ url_for('create_book') }}">Add Book</a> |
+      <a href="{{ url_for('create_author') }}">Add Author</a> |
+      <a href="{{ url_for('author_list') }}">Authors</a> |
+      <a href="{{ url_for('book_list') }}">Books</a> |
+      <a href="{{ url_for('link_author_book') }}">Link Author to Book</a> |
+      <a href="{{ url_for('remove_author_book') }}">Remove Author from Book</a>
+    </nav>
+  </head>
+  <body>
+    <header>
+      <h1>Python Library</h1>
+    </header>
+
+    <body>
+      {% block content %}{% endblock %}
+    </body>
+
+    <footer>
+      <p>&copy; 2025 Python Library</p>
+    </footer>
+  </body>
+</html>
