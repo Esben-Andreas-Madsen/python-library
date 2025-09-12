@@ -1,5 +1,5 @@
-from models.book import Book
-from storage.book_dao import BookDAO
+from app.models.book import Book
+from app.storage.book_dao import BookDAO
 
 class BookService:
     def __init__(self):

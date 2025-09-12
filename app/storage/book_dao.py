@@ -1,8 +1,8 @@
 import sqlite3
-from models.book import Book
+from app.models.book import Book
 
 class BookDAO:
-    def __init__(self, db_path="./storage/library.db"):
+    def __init__(self, db_path="./app/storage/library.db"):
         self.db_path = db_path
 
     def _get_connection(self):
