@@ -1,6 +1,6 @@
 from flask import Flask
-from extentions import db
-from routes import register_routes
+from .extensions import db
+from .routes import register_routes
 
 def create_app(config_class=None):
     app = Flask(__name__)
@@ -13,3 +13,8 @@ def create_app(config_class=None):
     register_routes(app)
     
     return app
+
+def init_db(app):
+    with app.app_context():
+        db.create_all()
+        print("Database initialized!")

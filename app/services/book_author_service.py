@@ -1,6 +1,6 @@
 from app.services.book_service import BookService
 from app.services.author_service import AuthorService
-from app.storage.book_author_dao import BookAuthorDAO
+from app.dao.book_author_dao import BookAuthorDAO
 from app.models.author import Author
 from app.models.book import Book
 

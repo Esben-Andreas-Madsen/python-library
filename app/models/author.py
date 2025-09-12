@@ -1,46 +1,16 @@
-class Author:
-    def __init__(self, id=None, name=None, birth_year=None):
-        self._id = id
-        self._name = name
-        self._birth_year = birth_year
-        self._books = []
+# app/models/author_sql.py
+from app.extensions import db
+from app.models.book_author import book_authors
 
-    @property
-    def id(self):
-        return self._id
+class Author(db.Model):
+    __tablename__ = "authors"
 
-    @id.setter
-    def id(self, value):
-        self._id = value
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False)
+    birth_year = db.Column(db.Integer)
 
-    @property
-    def name(self):
-        return self._name
-
-    @name.setter
-    def name(self, value):
-        self._name = value
-
-    @property
-    def birth_year(self):
-        return self._birth_year
-
-    @birth_year.setter
-    def birth_year(self, value):
-        self._birth_year = value
-
-    @property
-    def books(self):
-        return self._books
-
-    def add_book(self, book):
-        if book not in self._books:
-            self._books.append(book)
-            book.add_author(self)
-    
-    @books.setter
-    def books(self, value):
-        self._books = value
-
-    def __repr__(self):
-        return f"Author(id={self._id}, name='{self._name}', birth_year={self._birth_year})"
+    books = db.relationship(
+        "Book",
+        secondary=book_authors,
+        back_populates="authors"
+    )

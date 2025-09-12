@@ -1,5 +1,5 @@
 from app.models.author import Author
-from app.storage.author_dao import AuthorDAO
+from app.dao.author_dao import AuthorDAO
 
 class AuthorService:
     def __init__(self):

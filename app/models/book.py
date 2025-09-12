@@ -1,73 +1,19 @@
-class Book:
-    def __init__(self, id=None, title=None, published_year=None, isbn=None, pages=None, language=None):
-        self._id = id
-        self._title = title
-        self._published_year = published_year
-        self._isbn = isbn
-        self._pages = pages
-        self._language = language
-        self._authors = []
+# app/models/book_sql.py
+from app.extensions import db
+from app.models.book_author import book_authors
 
-    @property
-    def id(self):
-        return self._id
+class Book(db.Model):
+    __tablename__ = "books"
 
-    @id.setter
-    def id(self, value):
-        self._id = value
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=False)
+    published_year = db.Column(db.Integer)
+    isbn = db.Column(db.String, unique=True)
+    pages = db.Column(db.Integer)
+    language = db.Column(db.String)
 
-    @property
-    def title(self):
-        return self._title
-
-    @title.setter
-    def title(self, value):
-        self._title = value
-
-    @property
-    def published_year(self):
-        return self._published_year
-
-    @published_year.setter
-    def published_year(self, value):
-        self._published_year = value
-
-    @property
-    def isbn(self):
-        return self._isbn
-
-    @isbn.setter
-    def isbn(self, value):
-        self._isbn = value
-
-    @property
-    def pages(self):
-        return self._pages
-
-    @pages.setter
-    def pages(self, value):
-        self._pages = value
-
-    @property
-    def language(self):
-        return self._language
-
-    @language.setter
-    def language(self, value):
-        self._language = value
-
-    @property
-    def authors(self):
-        return self._authors
-
-    def add_author(self, author):
-        if author not in self._authors:
-            self._authors.append(author)
-            author.add_book(self)
-    
-    @authors.setter
-    def authors(self, value):
-        self._authors = value
-
-    def __repr__(self):
-        return f"Book(id={self._id}, title='{self._title}', published_year={self._published_year})"
+    authors = db.relationship(
+        "Author",
+        secondary=book_authors,
+        back_populates="books"
+    )
