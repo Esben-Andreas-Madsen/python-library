@@ -1,8 +1,8 @@
-from services.book_service import BookService
-from services.author_service import AuthorService
-from storage.book_author_dao import BookAuthorDAO
-from models.author import Author
-from models.book import Book
+from app.services.book_service import BookService
+from app.services.author_service import AuthorService
+from app.dao.book_author_dao import BookAuthorDAO
+from app.models.author import Author
+from app.models.book import Book
 
 class BookAuthorService:
     def __init__(self):

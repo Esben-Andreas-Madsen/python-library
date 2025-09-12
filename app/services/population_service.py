@@ -1,6 +1,6 @@
-from services.book_service import BookService
-from services.author_service import AuthorService
-from services.book_author_service import BookAuthorService
+from app.services.book_service import BookService
+from app.services.author_service import AuthorService
+from app.services.book_author_service import BookAuthorService
 
 class PopulationService:
     def __init__(self):
