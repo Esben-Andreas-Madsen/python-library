@@ -20,4 +20,4 @@ So what do you do - you put in on the board and wait for someone else to pick it
 - refactor `app.py`
 - add folder structure
 - add `run.py`
-- add dev & test configs for app
+- add prod & test configs for app
