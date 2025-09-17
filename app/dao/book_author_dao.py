@@ -6,21 +6,21 @@ from app.extensions import db
 
 class BookAuthorDAO:
     def add_author_to_book(self, book_id: int, author_id: int):
-        book = Book.query.get(book_id)
+        book = db.session.get(Book, book_id)
         author = Author.query.get(author_id)
         if book and author and author not in book.authors:
             book.authors.append(author)
             db.session.commit()
 
     def remove_author_from_book(self, book_id: int, author_id: int):
-        book = Book.query.get(book_id)
+        book = db.session.get(Book, book_id)
         author = Author.query.get(author_id)
         if book and author and author in book.authors:
             book.authors.remove(author)
             db.session.commit()
 
     def get_authors_for_book(self, book_id: int) -> list[Author]:
-        book = Book.query.get(book_id)
+        book = db.session.get(Book, book_id)
         if book:
             return [Author(id=a.id, name=a.name, birth_year=a.birth_year) for a in book.authors]
         return []

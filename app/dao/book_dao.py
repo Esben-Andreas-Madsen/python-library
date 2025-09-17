@@ -16,15 +16,15 @@ class BookDAO:
         return book
 
     def get_book_by_id(self, book_id) -> Book | None:
-        db_book = Book.query.get(book_id)
-        if db_book:
+        book = db.session.get(Book, book_id)
+        if book:
             return Book(
-                id=db_book.id,
-                title=db_book.title,
-                published_year=db_book.published_year,
-                isbn=db_book.isbn,
-                pages=db_book.pages,
-                language=db_book.language
+                id=book.id,
+                title=book.title,
+                published_year=book.published_year,
+                isbn=book.isbn,
+                pages=book.pages,
+                language=book.language
             )
         return None
 
