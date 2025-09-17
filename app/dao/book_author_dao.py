@@ -26,7 +26,7 @@ class BookAuthorDAO:
         return []
 
     def get_books_for_author(self, author_id: int) -> list[Book]:
-        author = Author.query.get(author_id)
+        author = db.session.get(Author, author_id)
         if author:
             return [
                 Book(

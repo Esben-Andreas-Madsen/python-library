@@ -11,7 +11,7 @@ class AuthorDAO:
         return author
 
     def get_author_by_id(self, author_id) -> Author:
-        db_author = Author.query.get(author_id)
+        db_author = db.session.get(Author, author_id)
         if db_author:
             return Author(id=db_author.id, name=db_author.name, birth_year=db_author.birth_year)
         return None
@@ -35,7 +35,7 @@ class AuthorDAO:
         db.session.commit()
 
     def delete_author(self, author_id):
-        db_author = Author.query.get(author_id)
+        db_author = db.session.get(Author, author_id)
         if db_author:
             db.session.delete(db_author)
             db.session.commit()
