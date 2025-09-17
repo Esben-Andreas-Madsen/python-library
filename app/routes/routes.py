@@ -71,7 +71,7 @@ def edit_book(book_id):
 ##########################
 # ---- Author routes -----
 ##########################
-@routes.route('/author/create', methods=['GET', 'POST'])
+@routes.route('/authors/create', methods=['GET', 'POST'])
 def create_author():
     if request.method == 'POST':
         name = request.form['name']
