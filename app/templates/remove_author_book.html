@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block content %}
 <section>
   <h2>Remove Author from Book</h2>
-  <form method="POST" action="{{ url_for('remove_author_book') }}">
+  <form method="POST" action="{{ url_for('routes.remove_author_book') }}">
     <label for="book_id">Select Book:</label>
     <select name="book_id" id="book_id" required>
       {% for book in books %}

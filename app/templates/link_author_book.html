@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block content %}
 <section>
   <h2>Link Author to Book</h2>
-  <form method="POST" action="{{ url_for('link_author_book') }}">
+  <form method="POST" action="{{ url_for('routes.link_author_book') }}">
     <label for="book_id">Select Book:</label>
     <select name="book_id" id="book_id" required>
       {% for book in books %}

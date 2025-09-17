@@ -1,6 +1,6 @@
 from flask import Flask
 from .extensions import db
-from .routes import register_routes
+from app.routes.routes import routes
 
 def create_app(config_class=None):
     app = Flask(__name__)
@@ -10,7 +10,7 @@ def create_app(config_class=None):
     
     db.init_app(app)
     
-    register_routes(app)
+    app.register_blueprint(routes)
     
     return app
 

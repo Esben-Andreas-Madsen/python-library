@@ -9,13 +9,16 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
     <nav>
-      <a href="{{ url_for('index') }}">Home</a> |
-      <a href="{{ url_for('create_book') }}">Add Book</a> |
-      <a href="{{ url_for('create_author') }}">Add Author</a> |
-      <a href="{{ url_for('author_list') }}">Authors</a> |
-      <a href="{{ url_for('book_list') }}">Books</a> |
-      <a href="{{ url_for('link_author_book') }}">Link Author to Book</a> |
-      <a href="{{ url_for('remove_author_book') }}">Remove Author from Book</a>
+      <a href="{{ url_for('routes.index') }}">Home</a> |
+      <a href="{{ url_for('routes.create_book') }}">Add Book</a> |
+      <a href="{{ url_for('routes.create_author') }}">Add Author</a> |
+      <a href="{{ url_for('routes.author_list') }}">Authors</a> |
+      <a href="{{ url_for('routes.book_list') }}">Books</a> |
+      <a href="{{ url_for('routes.link_author_book') }}">Link Author to Book</a
+      >|
+      <a href="{{ url_for('routes.remove_author_book') }}"
+        >Remove Author from Book</a
+      >
     </nav>
   </head>
   <body>

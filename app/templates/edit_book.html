@@ -36,7 +36,10 @@
     <input type="submit" value="Save Changes" />
   </form>
 
-  <form method="POST" action="{{ url_for('delete_book', book_id=book.id) }}">
+  <form
+    method="POST"
+    action="{{ url_for('routes.delete_book', book_id=book.id) }}"
+  >
     <button type="submit" class="btn-delete">&#9003; Delete</button>
   </form>
 </section>

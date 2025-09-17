@@ -1,7 +1,10 @@
 {% extends "layout.html" %} {% block content %}
 <section>
   <h2>Edit Author</h2>
-  <form method="POST" action="{{ url_for('edit_author', author_id=author.id)}}">
+  <form
+    method="POST"
+    action="{{ url_for('routes.edit_author', author_id=author.id)}}"
+  >
     <label for="name">Name</label>
     <input
       type="text"
@@ -25,7 +28,7 @@
 
   <form
     method="POST"
-    action="{{ url_for('delete_author', author_id=author.id) }}"
+    action="{{ url_for('routes.delete_author', author_id=author.id) }}"
   >
     <button type="submit" class="btn-delete">&#9003; Delete</button>
   </form>
