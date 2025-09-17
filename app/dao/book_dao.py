@@ -68,7 +68,7 @@ class BookDAO:
         db.session.commit()
 
     def delete_book(self, book_id):
-        db_book = Book.query.get(book_id)
+        db_book = db.session.get(Book, book_id)
         if db_book:
             db.session.delete(db_book)
             db.session.commit()
