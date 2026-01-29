@@ -8,7 +8,7 @@ Technologies used:
 - Flask
 - pytest
 
-Also includes a automatic integration test in `.github/workflows/pytest.yaml` that runs every push/pull on main branch.
+Also includes an automatic integration test in `.github/workflows/pytest.yaml` that runs every push/pull on main branch.
 
 Flow of application: DB <-> DAO <-> Services <-> API <-> Frontend
 
