@@ -21,3 +21,4 @@ Flow of application: DB <-> DAO <-> Services <-> API <-> Frontend
 ## Todo
 - make data searchable
 - update api
+- add docker-compose option to run
