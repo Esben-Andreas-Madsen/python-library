@@ -1,5 +1,5 @@
 # Python-library
-A simple python online-library with a many-to-many Author<->Book relation
+A python fullstack online-library with a many-to-many Author<->Book relation
 
 How to run:
 1. clone repository your preffered way
